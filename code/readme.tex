@@ -1,0 +1,107 @@
+Main Functions:
+
+	- First section title Audio Feature Extraction and Exploration
+		- Examples of different audio features
+
+		- Code was borrowed from the Github link that is hyperlinked immediately under the section name
+
+		- https://github.com/HareeshBahuleyan/music-genre-classification
+
+		- I had to update some of the code here so that it would work with more recent package updates
+
+		- Libraries/Modules and Functions
+			- IPython.display.Audio
+				- Used to preview audio clip in Python
+
+			- Librosa
+				- Used for music feature extraction
+
+				- waveplot
+					- plots the audiowave of an input
+
+				- pre-emphasis filter
+					- eliminates unnecessary noise
+
+				- STFT - Short time Fourier Transform
+					- Creates a spectrogram using STFT
+
+				- amplitude_to_db
+					- One of the functions I needed to modify
+					- Converts amplitude frequencies to decibal which can be visualized as a spectrogram
+
+				- cqt
+					- Constant Q Transform
+					- Can be used to visualize a spectrogram
+
+				- zero_crossing_rate
+					- computes the zero crossing rate of input
+
+				- magphase
+					- Visualize RMSE as a spectrogram
+
+				- spectral_centroid
+					- computes the spectral centroid for each frame of the signal
+
+				- spectral_bandwidth
+					- visualize the spectral bandwidth for a signal
+
+				- spectral_contrast
+					- computes the spectral contrast of an input signal
+					- create spectrogram from this feature
+
+				- spectral_rolloff
+
+				- mfcc
+					- compute the mel-frequency cepstral coefficient of a signal
+
+			- Modified the function to convert the .wav files to MEL Spectrograms to work with my data and with the subfolders in my path
+
+	- Models Based on Extracted Audio Features
+		- Uses features that were extracted and written to my Google drive
+
+		 - Use Panda Python package	for loading the files in
+
+		 - Followed the logic of the user defined functions, updated to include training accuracy
+		 	- Some functions changed because they were renamed or removed by different Python packages
+
+		 - User-defined plot_confusion_matrix, one_hot_encoder, and display_results methods come from the Github hyperlinked immediately underneath the section title
+
+		 - Logistic Regression Model
+		 	- Model comes from Scikit Learn
+
+		 - I used precision_recall_fscore_support from the Scikit Learn.Metrics module
+
+		- Random Forest Model
+			- Scikit Learn model
+
+		- XGBoost
+			- Model from xgboost Python package
+
+		- Support Vector Machines
+			- Model from Scikit learn
+
+		- VGG-16 Comes from the Github hyperlinked directly below the section title
+
+	- CNN Models for Music Genre Classification Using Spectrograms
+		- First few cells in this slide are from me attempting to get better performance from these models. I kept running into errors and editing the code to try and get it to work. Eventually I got something to work. I will include those files in my submission
+
+		- Tried to keep original source code as in tact as possible to keep track of changes
+
+
+Code in Code Folder:
+
+	- files in 'audiomanip' and params.ini from the following Github
+		- https://github.com/kwontaeheon/gtzan_music_genre_classification
+
+		- audioutils, audiostructs, and audiomodels hardly modified
+			- Most modifications occurred in my Colab notebook
+
+		- Different parameter files are included as I modified each of these from the original params.ini file (still from the above Github link) to set the parameters for each model to run concurrently in Colab
+
+		- test.py and train.py also from the above Github
+
+	- MAIN PROJECT FILE:
+		- Music_Genre_Classification.ipynb
+			- Should still display figures and results from the last time I ran the cells
+
+			- Githubs are hyperlinked immediately beneath the section titles
